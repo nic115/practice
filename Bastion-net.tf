@@ -340,7 +340,6 @@ resource "aws_instance" "mysql" {
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.mysql_sec_group.id]
   subnet_id              = aws_subnet.private_subnet.id
-  user_data              = file("~/Darktrace/configure_mysql.sh")
   tags = {
     Name = "mysql-instance"
   }
